@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>湖畔灵犀 | 智能3C解决方案领导者</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #333; line-height: 1.6; }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://wanx.alicdn.com/wanx/1064904076560034/text_to_image_lite_v2/f73cf8a8952f4609a15d4db2da52e0de_0_visibleWatermark.png') center/cover no-repeat;
+            opacity: 0.3;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, #00d4ff, #7b2cbf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero p { font-size: 1.3rem; margin-bottom: 2.5rem; opacity: 0.9; }
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(90deg, #00d4ff, #7b2cbf);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,212,255,0.4); }
+
+        /* Features Section */
+        .features { padding: 6rem 2rem; background: #f8fafc; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            color: #0a1628;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover { transform: translateY(-8px); }
+        .feature-icon {
+            width: 60px; height: 60px;
+            background: linear-gradient(135deg, #00d4ff, #7b2cbf);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        .feature-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: #0a1628; }
+        .feature-card p { color: #64748b; font-size: 1rem; }
+
+        /* Products Section */
+        .products { padding: 6rem 2rem; background: white; }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+        .product-card {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        .product-card:hover { transform: scale(1.02); }
+        .product-img {
+            height: 250px;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 4rem; color: #94a3b8;
+        }
+        .product-info { padding: 2rem; }
+        .product-info h3 { font-size: 1.5rem; margin-bottom: 0.8rem; color: #0a1628; }
+        .product-info p { color: #64748b; margin-bottom: 1.5rem; }
+        .product-tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: #eff6ff;
+            color: #3b82f6;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #0a1628, #1a2a4a);
+            color: white;
+            text-align: center;
+        }
+        .contact h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+        .contact p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 1rem;
+        }
+        .contact-form input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+        .contact-form button {
+            padding: 1rem 2rem;
+            background: linear-gradient(90deg, #00d4ff, #7b2cbf);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .contact-form button:hover { transform: scale(1.05); }
+
+        /* Footer */
+        footer {
+            background: #050d1a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
+            .section-title { font-size: 2rem; }
+            .contact-form { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>湖畔灵犀，智连万物</h1>
+            <p>湖畔灵犀（杭州）科技有限公司专注于高端智能手机与高性能计算设备研发，以自研核心技术驱动未来数字体验</p>
+            <a href="#contact" class="btn">立即咨询合作</a>
+        </div>
+    </section>
+
+    <!-- Core Features -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">为什么选择湖畔灵犀</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>自主研发芯片</h3>
+                    <p>自研LX-X1处理器，采用5nm先进制程，性能提升40%，功耗降低30%，为旗舰设备提供澎湃算力</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>企业级安全</h3>
+                    <p>硬件级加密引擎+TEE可信执行环境，通过CC EAL5+认证，满足金融、政务等高安全场景需求</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>全生态互联</h3>
+                    <p>自研LXLink协议实现手机、电脑、IoT设备毫秒级无缝协同，打造真正一体化的智能工作流</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">旗舰产品矩阵</h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-img">📱</div>
+                    <div class="product-info">
+                        <h3>Lingxi Pro X 智能手机</h3>
+                        <p>搭载LX-X1芯片 | 2亿像素计算摄影 | 5500mAh硅碳负极电池 | 卫星通信</p>
+                        <span class="product-tag">旗舰手机</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">💻</div>
+                    <div class="product-info">
+                        <h3>Lingxi Book Ultra 笔记本</h3>
+                        <p>14英寸OLED触控屏 | LX-X1 Max芯片 | 32GB统一内存 | 20小时续航</p>
+                        <span class="product-tag">高性能笔记本</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-img">🖥️</div>
+                    <div class="product-info">
+                        <h3>Lingxi Station 工作站</h3>
+                        <p>双LX-X1 Ultra芯片 | 192GB内存 | 支持8K实时渲染 | 液冷散热系统</p>
+                        <span class="product-tag">专业工作站</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>开启智能新时代</h2>
+            <p>无论您是渠道合作伙伴、企业客户还是开发者，湖畔灵犀都期待与您携手共创</p>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('感谢您的关注！我们的商务团队将在24小时内与您联系。');">
+                <input type="email" placeholder="请输入您的企业邮箱" required>
+                <button type="submit">获取合作方案</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 湖畔灵犀（杭州）科技有限公司 | Lingxi Technology Co., Ltd. 保留所有权利</p>
+    </footer>
+</body>
+</html>
